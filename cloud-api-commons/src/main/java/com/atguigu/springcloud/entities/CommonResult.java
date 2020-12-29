@@ -15,7 +15,6 @@ public class CommonResult<T> {
     private Integer code;
     private String message;
     private T data; //类
-
     public CommonResult(Integer code,String message){
         this(code,message, null);
     }

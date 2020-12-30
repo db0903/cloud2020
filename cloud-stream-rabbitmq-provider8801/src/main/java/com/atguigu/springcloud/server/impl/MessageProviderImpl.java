@@ -21,7 +21,7 @@ public class MessageProviderImpl implements IMessageProvider {
     public String send(){
         String serial = UUID.randomUUID().toString();
         output.send(MessageBuilder.withPayload(serial).build()); //消息绑定器
-        System.out.println("*****serial: "+serial);
+        System.out.println("*****seria生产者8801: "+serial);
         return null;
     }
 

@@ -7,10 +7,10 @@ spring:
     config:
       server:
         git:
-          uri:  https://github.com/db0903/sprincloud-config.git
+          uri:  git@github.com:db0903/cloud2020.git
           search-paths:
-            - springcloud-config
-      label: master
+            - cloud2020
+      label: main
 eureka:
   client:
     service-url:

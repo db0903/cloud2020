@@ -12,16 +12,30 @@ spring:
     sentinel:
       transport:
         dashboard: 192.168.75.130:8080
+        clientIp: 192.168.75.1  #地址问题会导致sentinel 没有监控，Linux 192.168.75.XXX,192.168.75.1本机虚拟网卡地址
 #        dashboard: localhost:8080
         port: 8719  #默认8719，假如被占用了会自动从8719开始依次+1扫描。直至找到未被占用的端口
-        clientIp: 192.168.75.1  #地址问题会导致sentinel 没有监控，Linux 192.168.75.XXX,192.168.75.1本机虚拟网卡地址
-#      eager: true  关闭懒加载
+      datasource:
+        ds1:
+          nacos:
+            server-addr: 192.168.75.130:8848
+            dataId: cloudalibaba-sentinel-service
+            groupId: DEFAULT_GROUP
+            data-type: json
+            rule-type: flow
 
 management:
   endpoints:
     web:
       exposure:
         include: '*'
+
+feign:
+  sentinel:
+    enabled: true # 激活Sentinel对Feign的支持
+
+
+
 
 
 

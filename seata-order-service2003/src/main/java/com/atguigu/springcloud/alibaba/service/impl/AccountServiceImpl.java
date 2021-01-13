@@ -33,11 +33,11 @@ public class AccountServiceImpl implements AccountService {
 
         LOGGER.info("------->account-service中扣减账户余额开始");
         //模拟超时全程事务回滚
-        try {
-            TimeUnit.SECONDS.sleep(20);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        //try {
+        //    TimeUnit.SECONDS.sleep(20);
+        //} catch (InterruptedException e) {
+        //    e.printStackTrace();
+        //}
         accountDao.decrease(userId,money);
         LOGGER.info("------->account-service中扣减账户余额结束");
 

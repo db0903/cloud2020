@@ -31,7 +31,7 @@ public class OrderServiceImpl implements OrderService {
      */
 
     @Override
-    @GlobalTransactional(name = "fsp-create-order",rollbackFor = Exception.class)
+    @GlobalTransactional(name = "fsp-create-order",rollbackFor = Exception.class) //无论发生任何异常都需要回滚
     public void create(Order order){
         log.info("----->开始新建订单");
         //新建订单
